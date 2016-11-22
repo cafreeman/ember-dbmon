@@ -19,20 +19,17 @@ export default Ember.Controller.extend({
   loadSamples() {
     set(this, 'model', generateData(get(this, 'model.databaseArray')));
     monitoring.renderRate.ping();
-    clear = Ember.run.later(this, 'loadSamples', 0);
-    // clear = setTimeout(this.loadSamples, 0);
+    clear = requestAnimationFrame(Ember.run.bind(this, this.loadSamples));
   },
 
   actions: {
     toggle() {
       if (get(this, 'playing')) {
-        Ember.run.cancel(clear);
-        // clearTimeout(clear);
+        cancelAnimationFrame(clear);
         clear = null;
         set(this, 'playing', false);
       } else {
         this.loadSamples();
-        // get(this, 'loadSamples')();
         set(this, 'playing', true);
       }
     }
