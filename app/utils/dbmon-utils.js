@@ -24,7 +24,7 @@ export function getCountClassName(queries) {
 
   if (queries.length >= 20) {
     countClassName += " label-important";
-  } else if (queries.length >= 20) {
+  } else if (queries.length >= 10) {
     countClassName += " label-warning";
   } else {
     countClassName += " label-success"
