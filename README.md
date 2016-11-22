@@ -1,5 +1,9 @@
 # ember-dbmon
 
+This app replicates the DBMon benchmark in Ember 2.10-beta, using the Glimmer 2 rendering engine.
+
+Live demo can be found [here](http://ember-glimmer-dbmon.surge.sh/).
+
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
