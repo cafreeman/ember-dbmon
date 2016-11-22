@@ -1,0 +1,9 @@
+<button {{action 'toggle'}}>Play</button>
+
+<table class="table table-striped latest-data">
+  <tbody>
+    {{#each model.databaseArray as |db|}}
+      {{dbmon-database db=db}}
+    {{/each}}
+  </tbody>
+</table>
